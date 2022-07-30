@@ -33,6 +33,7 @@ config :indexer,
     String.to_integer(System.get_env("TOKEN_METADATA_UPDATE_INTERVAL") || "#{2 * 24 * 60 * 60}"),
   first_block: System.get_env("FIRST_BLOCK") || "",
   last_block: System.get_env("LAST_BLOCK") || "",
+  block_ranges: System.get_env("BLOCK_RANGES") || "",
   trace_first_block: System.get_env("TRACE_FIRST_BLOCK") || "",
   trace_last_block: System.get_env("TRACE_LAST_BLOCK") || "",
   fetch_rewards_way: System.get_env("FETCH_REWARDS_WAY", "trace_block")
