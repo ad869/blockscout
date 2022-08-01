@@ -294,6 +294,11 @@ defmodule EthereumJSONRPC.Receipt do
     :ignore
   end
 
+  # GoQuorum specific transaction receipt fields
+  defp entry_to_elixir({key, _}) when key in ~w(isPrivacyMarkerTransaction) do
+    :ignore
+  end
+
   # Nethermind field
   defp entry_to_elixir({"error", _}) do
     :ignore
